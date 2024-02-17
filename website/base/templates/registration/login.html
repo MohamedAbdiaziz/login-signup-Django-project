@@ -1,5 +1,15 @@
-<form action="" method="post">
-    {% csrf_token %}
-    {{form }}
-    <input type="submit" value="login">
-</form>
+{% extends "base.html" %}
+
+{% block login %}
+<div class="shadow-wrap">
+    <div class="form-wrap">
+        <h3>Login</h3>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form }}
+            <button type="submit">Login</button>
+        </form>
+        <a href="{% url "base:signup" %}" class="signup-link">Signup</a>
+    </div>
+</div>
+{% endblock login %}
